@@ -1,0 +1,31 @@
+{
+  "name": "bookvault",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Popie52/BookVault.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Popie52/BookVault/issues"
+  },
+  "homepage": "https://github.com/Popie52/BookVault#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "pg": "^8.16.0",
+    "tailwindcss": "^4.1.8"
+  }
+}

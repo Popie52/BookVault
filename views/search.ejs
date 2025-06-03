@@ -1,0 +1,68 @@
+<div
+  class="mt-6 py-8 flex gap-6 items-start max-[916px]:flex-col max-w-[1240px] mx-auto border-b-2 border-gray-100"
+>
+  <div class="border-2 border-gray-100 p-2 px-3 md:flex-1/2 w-full flex items-center gap-2 focus-within:border-black">
+    <svg class="h-4 w-5 text-gray-600 "
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+      />
+    </svg>
+
+    <input
+      type="text"
+      placeholder="Search books, authors, or notes..."
+      class="outline-0 w-full"
+    />
+  </div>
+
+  <div class="flex gap-2 max-[768px]:justify-between max-lg:w-full flex-wrap ">
+    <div class="border-2 border-gray-100 p-2 focus-within:border-black">
+      <select name="bookSortings" id="sorting">
+        <option value="recent" selected>Recently Read</option>
+        <option value="rated">Highest Rated</option>
+        <option value="title">Title A-Z</option>
+        <option value="author">Author A-Z</option>
+      </select>
+    </div>
+
+    <div class="border-2 border-gray-100 p-2 focus-within:border-black">
+      <select name="bookRatings" id="ratings">
+        <option value="recent" selected>All Ratings</option>
+        <option value="rated">5 stars</option>
+        <option value="title">4+ stars</option>
+        <option value="author">3+ stars</option>
+      </select>
+    </div>
+
+    <button
+      class="addBook bg-black text-white px-4 py-2 text-center hover:bg-black/70 transition-colors ease-in-out duration-200 cursor-pointer flex items-center gap-2"
+    >
+      <svg
+        class="h-5"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 4.5v15m7.5-7.5h-15"
+        />
+      </svg>
+
+      Add Book
+    </button>
+  </div>
+</div>

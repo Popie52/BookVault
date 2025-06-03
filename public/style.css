@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+@layer utilities {
+  .font-system {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+}
