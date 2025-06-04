@@ -1,5 +1,5 @@
 <div id="addPage"
-  class="w-full h-full pointer-events-none opacity-0 bg-black/50  absolute top-0 left-0  justify-center items-center px-4 py-10 flex transition-opacity duration-300 ease-in-out"
+  class="w-full h-full pointer-events-none opacity-0 bg-black/50  fixed top-0 left-0  justify-center items-center px-4 py-10 flex transition-opacity duration-300 ease-in-out"
 >
   <div class="max-w-[480px] h-170 w-full bg-white p-8 overflow-y-scroll">
     <div class="flex justify-between items-center border-b-2 border-gray-100 py-6">
@@ -22,28 +22,28 @@
     </div>
 
     <div>
-        <form action="#" method="post">
+        <form action="/add" method="post">
             <div class="flex flex-col mt-6">
                 <label for="title" class="mb-2 font-light">TITLE *</label>
-                <input type="text" class="p-3 border-2 border-gray-100">
+                <input id="title" name="title" type="text" class="p-3 border-2 border-gray-100">
             </div>
             <div class="flex flex-col mt-6">
                 <label for="author" class="mb-2 font-light">AUTHOR *</label>
-                <input type="text" class="p-3 border-2 border-gray-100">
+                <input id="author" name="author" type="text" class="p-3 border-2 border-gray-100">
             </div>
             <div class="flex flex-col mt-6">
                 <label for="rate" class="mb-2 font-light">RATINGS *</label>
                 <select name="rate" id="rate" class="p-2 border-2 border-gray-100 focus-within:border-black">
-                    <option value="five star">5 Stars</option>
-                    <option value="four star">4 Stars</option>
-                    <option value="three star">3 Stars</option>
-                    <option value="two star">2 Stars</option>
-                    <option value="one star">1 Star</option>
+                    <option value="5">5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="2">2 Stars</option>
+                    <option value="1">1 Star</option>
                 </select>
             </div>
             <div class="flex flex-col mt-6">
                 <label for="date" class="mb-2 font-light">DATE READ *</label>
-                <input type="date"  class="p-3 border-2 border-gray-100">
+                <input type="date" name="date" id="date" class="p-3 border-2 border-gray-100">
             </div>
 
             <div class="flex flex-col mt-6">

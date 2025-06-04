@@ -1,0 +1,78 @@
+
+<%- include('partials/header.ejs') %>
+
+
+<div id="addPages"
+  class="w-full h-full  bg-black/50  fixed top-0 left-0  justify-center items-center px-4 py-10 flex transition-opacity duration-300 ease-in-out"
+>
+  <div class="max-w-[480px] h-170 w-full bg-white p-8 overflow-y-scroll">
+    <div class="flex justify-between items-center border-b-2 border-gray-100 py-6">
+      <h1 class="text-2xl font-light">Edit Book</h1>
+            <form action="/" method="get">
+                <button type="submit">
+                    
+                    <svg class="hover:text-black cursor-pointer text-gray-500 h-5 w-5 duration-200 transition-all ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="size-6"
+                    id="close-btns"
+                    
+                    >
+                    <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                    />
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <div>
+        <form action="/edit/<%= book.id %>" method="post">
+            <div class="flex flex-col mt-6">
+                <label for="title" class="mb-2 font-light">TITLE *</label>
+                <input  name="title" type="text" class="p-3 border-2 border-gray-100"  value="<%= book.title %>" >
+            </div>
+            <div class="flex flex-col mt-6">
+                <label for="author" class="mb-2 font-light">AUTHOR *</label>
+                <input  name="author" type="text" class="p-3 border-2 border-gray-100" value="<%= book.author %>" >
+            </div>
+            <div class="flex flex-col mt-6">
+                <label for="rate" class="mb-2 font-light">RATINGS *</label>
+                <select name="rate" class="p-2 border-2 border-gray-100 focus-within:border-black">
+                    <option value="5" <%= book.rating == 5 ? 'selected' : '' %>>5 Stars</option>
+                    <option value="4" <%= book.rating == 4 ? 'selected' : '' %> >4 Stars</option>
+                    <option value="3" <%= book.rating == 3 ? 'selected' : '' %> >3 Stars</option>
+                    <option value="2" <%= book.rating == 2 ? 'selected' : '' %> >2 Stars</option>
+                    <option value="1" <%= book.rating == 1 ? 'selected' : '' %> >1 Star</option>
+                </select>
+            </div>
+            <div class="flex flex-col mt-6">
+                <label for="date" class="mb-2 font-light">DATE READ *</label>
+                <input type="date" name="date" class="p-3 border-2 border-gray-100" value="<%= new Date(book.date_read).toISOString().slice(0,10) %>" >
+            </div>
+
+            <div class="flex flex-col mt-6">
+                <label for="notes" class="mb-2 font-light">NOTES *</label>
+                <textarea name="notes"  class="border-2 border-gray-100 p-2" placeholder="Key takeways or insights" rows="3"><%= book.description %></textarea>
+            </div>
+
+            <div class="mt-6">
+                <button class="bg-black text-white p-2 w-full cursor-pointer hover:bg-black/80 transition-all duration-300 ease-in-out" type="submit">
+                    Save Book
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+  </div>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>

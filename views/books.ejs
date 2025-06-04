@@ -1,38 +1,39 @@
-<div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 py-10">
+<div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-1 py-10 max-w-[1240px] mx-auto ">
+    <% for(let i =0; i < usersData.length; i++) { %>
   <div class="border-2 border-gray-100 shadow-md p-6 transition-all duration-300">
     <div class="flex gap-10 mb-4">
       <div class="h-30 w-30">
         <img
-          src="https://w.wallhaven.cc/full/ly/wallhaven-ly972r.jpg"
+          src="<%= usersData[i].book_cover %>"
           alt="random"
           class="h-full w-full object-cover"
         />
       </div>
 
       <div>
-        <h1 class="text-2xl">Atomix Habits</h1>
-        <p class="text-md font-light mb-4 text-gray-500">by James Clear</p>
+        <h1 class="text-2xl"><%= usersData[i].title %></h1>
+        <p class="text-md font-light mb-4 text-gray-500">by <%= usersData[i].author %></p>
         <div>
-          <span class="h-1">★</span>
-          <span class="">★</span>
+            <% for(let j = 0; j < usersData[i].rating; j++) { %>
+            <span class="h-1">★</span>
+            <% } %>
         </div>
       </div>
     </div>
 
     <div class="flex justify-between text-sm gap-4 text-gray-500 py-3">
-      <h3 class="font-light">READ JAN 2025</h3>
-      <p class="font-light">5/5</p>
+      <h3 class="font-light">READ <%= new Date(usersData[i].date_read).toDateString() %></h3>
+      <p class="font-light"> <%= usersData[i].rating %>/5</p>
     </div>
 
     <div class="border-l-2 border-gray-200 p-2 italic text-sm text-gray-500">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat aliquid
-      voluptatum ullam maiores voluptas, consectetur incidunt! Velit perferendis
-      cupiditate placeat.
+      <%= usersData[i].description %>
     </div>
 
     <div class="flex justify-end py-3 gap-4">
-      <button id="edit-btn"
-        class="border-2 border-gray-100 p-2 hover:bg-black hover:text-white transition-all duration-300 ease-in-out cursor-pointer text-gray-500"
+      <button  
+        class="edit-btn border-2 border-gray-100 p-2 hover:bg-black hover:text-white transition-all duration-300 ease-in-out cursor-pointer text-gray-500"
+        onclick="window.location.href='/edit/<%= usersData[i].id %>'"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +50,8 @@
           />
         </svg>
       </button>
+      <form action="/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete this book?');">
+        <input type="hidden" name="id" value="<%= usersData[i].id %>">
       <button id="delete-btn"
         class="border-2 border-gray-100 p-2 hover:bg-black hover:text-white transition-all duration-300 ease-in-out cursor-pointer text-gray-500"
       >
@@ -67,8 +70,10 @@
           />
         </svg>
       </button>
+      </form>
     </div>
   </div>
+ <% } %>
 
 
 
